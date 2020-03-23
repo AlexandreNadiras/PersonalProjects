@@ -1,3 +1,13 @@
+Here is the list of files contained in this repo:
+	
+	- UseCaseObjectives.py: the main file that contains the first objectives
+	- BonusSQL.py: contains the 1 & 2 bonus Questions
+	- BonusVisualisation.py: contains the visualisation, the question 3 bonus
+	- BonusMachineLearning.py: contains the predictor and the last bonus question
+	- requirements.txt: contains the requirements to run this files properly
+	- REARME.md: contains all the extra informations, code and commentary about the python codes and the questions.
+
+
 # Requirements:
 
 pip install -r requirements.txt
