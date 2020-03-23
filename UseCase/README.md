@@ -16,6 +16,8 @@ If you are working with a 2.X version of python, you will probably have to insta
 
 pip install pysqlite
 
+You need to download the CSV file.
+
 All this python files and the original CSV Files must be in the same directory on your computer.
 
 
