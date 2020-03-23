@@ -56,73 +56,105 @@ You can find here the corresponding number to each country here:
          'Ukraine': 31, 'Serbia': 32, 'Macedonia': 33, 'Czech Republic': 34, 'Cyprus': 35, 'India': 36, 'Switzerland':37, 'Luxembourg': 38, 'Bosnia and Herzegovina': 39, 
          'Armenia': 40, 'Egypt': 41, 'Slovakia': 42, 'China': 43}
 
-the methodology is used is the following:
-	- test
-	- rr
+
 The methodology I used is the following:
-	- 
+
 	- Reading the original CSV into a pandas Dataframe
+	
 	- Cleaning the dataframe by droping all the NaN values and the features except price, points and country
+	
 	- Replacing each country name by an integer
+	
 	- Training and testing some predictors
+	
 	- Choosing the best one
+	
 	- Optimizing the predictor
+	
 	- Creating a function that allows the user to get a prediction by giving a country number and a price
 
 The first thing to note here is that he have a categorical feature that does not take a numerical value.
+
 This will be a problem when training our model so I will turn each country as a class and assign to each country a number.
+
 One other problem that we have to deal with is the fact that our data are very unbalanced.
+
 There are many ways to deal with this issue, either get more data, or manipulate our dataset by creating other artificial rows, also
 given the time allowed to do this test, I might not ba able to handle this problem in the best way.
+
 The problem I face for this test is a regression problem.
+
 I will try different algorithms in order to solve this and make the best predictor possible:
+
     - RandomForest
     - Linear Regression
 
 
-In this exercice, i got rid of a lot of code that were unnecessary for the execution but necessary for the training and optimisation of the model,
-so I putted it in this Readme down bellow.
+In this exercice, i got rid of a lot of code that were unnecessary for the execution but necessary for the training and optimisation of the model,so I putted it in this Readme down bellow.
 
 from sklearn.linear_model import LinearRegression
+
 from sklearn.metrics import mean_squared_error
+
 import numpy as np
+
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
+
 
 ## Training each model and evaluating it on the training set:
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 
 rf = RandomForestClassifier(n_estimators=51, random_state=42) 
+
 rf.fit(X, y)
+
 rf_score = cross_val_score(rf, X_train, y_train, cv=5, verbose=5)
+
 print('Score on Validation Set : {}'.format(rf_score.mean()))
 
 
 linear_reg = LinearRegression()
+
 linear_reg.fit(X, y)
+
 linear_score = cross_val_score(linear_reg, X_train, y_train, cv=5, verbose=5)
+
 print('Score on Validation Set : {}'.format(linear_score.mean()))
 
 
 ## Evaluating the model's performance:
 
 rf.fit(X_test, y_test)
+
 rf = rf.predict(X_test)
+
 rf_mse = mean_squared_error(y_test, rf)
+
 rf_rmse = np.sqrt(rf_mse)
+
 print(rf_rmse)
+
 
 ## Parameters optimisation:
 
 param_to_opti = {
+
     'n_estimators' : [11, 51, 101],
+    
     'criterion' : ['gini', 'entropy'],
+    
     'max_depth' : [4, 8],
+    
     'max_features' : ['auto', 'log2'],
+    
 }
 
 rf_opti = RandomForestClassifier()
+
 rf_opti_model = GridSearchCV(estimator=rf_opti, scoring='neg_mean_squared_error', param_grid=param_to_opti, cv=5)
+
 rf_opti_model.fit(X_train, y_train)
+
 print('Random Forest best hyperparameters : {}'.format(rf_opti_model.best_params_))
 
