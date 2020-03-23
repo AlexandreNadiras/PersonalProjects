@@ -1,4 +1,4 @@
-Here is the list of files contained in this repo:
+Here is the list of file contained in this repo:
 	
 	- UseCaseObjectives.py: the main file that contains the first objectives
 	- BonusSQL.py: contains the 1 & 2 bonus Questions
@@ -16,7 +16,7 @@ If you are working with a 2.X version of python, you will probably have to insta
 
 pip install pysqlite
 
-All this python files and the originale CSV Files must be in the same directory on your computer.
+All this python files and the original CSV Files must be in the same directory on your computer.
 
 
 # UseCaseObjectives.py:
@@ -43,21 +43,20 @@ The reason I used Sqlite3 is because I was familiar with it and also because the
 
 This code only needs to be executed once and should return a visualisation of the curve representing the average points given to each wine per price.
 
-I chose to aggregate on the price's mean the clean dataset first in order to get a better visualisation than a scatter chart.
+I chose to aggregate the clean dataset on the price's mean first in order to get a better visualisation than a scatter chart.
 
 Given this data we can see a clear tendancy: the more expensive a wine is the better score it should get. 
 It also appears that some wines between 200 and 300 are an exception to this. 
 
 I don't think that it is pertinent to consider the wines that have a higher price than 1500. 
 I think they are more likely to be outliers than variance in our data, because they are not tasted that much.
-What we can say however on those high price wines is that their supposed quality is not worth the price.
-This can be explained but the nature of the score itself, each wines are tested by people that can get upset with a wine they paid a lot to taste and didn't fill their expectations. 
+This can be explained but the nature of the score itself, each wines are tasted by people that can get upset with a wine they paid a lot to taste and didn't fill their expectations. 
 We also have to say that the dataset only gives us the wines that have a score above 80, and might not represent faithfully all the data.
 
 
 # BonusMachineLearning.py:
 
-In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() and give 2 arguments, the first one being the id of the country, and the second one being the price. 
+In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() in console mode and give 2 arguments, the first one being the id of the country, and the second one being the price. 
 
 I decided to use the scikit learn library as this is the machine learning library that I am the most comfortable with.
 
