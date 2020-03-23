@@ -2,11 +2,11 @@
 
 pip install -r requirements.txt
 
-If you are working with a 2.X version of python, you will have to install pysqlite.
+If you are working with a 2.X version of python, you will probably have to install pysqlite.
 
 pip install pysqlite
 
-All this codes and the originale CSV Files must be in the same directory.
+All this python files and the originale CSV Files must be in the same directory on your computer.
 
 
 # UseCaseObjectives.py:
@@ -19,18 +19,19 @@ The code is very documented and pretty straight forward.
 # BonusSQL.py:
 
 
-This code only needs to be executed one and should return the result of 2 SQl Requests.
+This code only needs to be executed once and should return the result of 2 SQL Requests.
 
 The first output is the result of the question: "What are the top 5 best wines below 10 USD?"
 
 The second output is the result of the question: "What are the top 5 best wines below 30 USD from Chile 🗿"
 
-The reason I used Sqlite3 is because I was familiar with it and also because the data I used were not that heavy and  resource consuming.
+The reason I used Sqlite3 is because I was familiar with it and also because the data I used were not that heavy and resource consuming.
+
 
 # BonusVisualisation.py:
 
 
-This code only needs to be executed once and should return a visualisation of the curve representing the points given to each wine versus the price.
+This code only needs to be executed once and should return a visualisation of the curve representing the average points given to each wine per price.
 
 I chose to aggregate on the price's mean the clean dataset first in order to get a better visualisation than a scatter chart.
 
@@ -38,7 +39,7 @@ Given this data we can see a clear tendancy: the more expensive a wine is the be
 It also appears that some wines between 200 and 300 are an exception to this. 
 
 I don't think that it is pertinent to consider the wines that have a higher price than 1500. 
-I think they are more likely to be outliers than variance in our data. 
+I think they are more likely to be outliers than variance in our data, because they are not tasted that much.
 What we can say however on those high price wines is that their supposed quality is not worth the price.
 This can be explained but the nature of the score itself, each wines are tested by people that can get upset with a wine they paid a lot to taste and didn't fill their expectations. 
 We also have to say that the dataset only gives us the wines that have a score above 80, and might not represent faithfully all the data.
@@ -48,7 +49,9 @@ We also have to say that the dataset only gives us the wines that have a score a
 
 In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() and give 2 arguments, the first one being the id of the country, and the second one being the price. 
 
-Due to the nature of my algorithm, the answer is an integer. 
+I decided to use the scikit learn library as this is the machine learning library that I am the most comfortable with.
+
+Due to the nature of my algorithm, the output is an integer. 
 
 You can find here the corresponding number to each country here:
 
@@ -75,14 +78,14 @@ The methodology I used is the following:
 	
 	- Creating a function that allows the user to get a prediction by giving a country number and a price
 
-The first thing to note here is that he have a categorical feature that does not take a numerical value.
+The first thing to note here is that he have a categorical feature that does not take a numerical value: the country.
 
 This will be a problem when training our model so I will turn each country as a class and assign to each country a number.
 
 One other problem that we have to deal with is the fact that our data are very unbalanced.
 
 There are many ways to deal with this issue, either get more data, or manipulate our dataset by creating other artificial rows, also
-given the time allowed to do this test, I might not ba able to handle this problem in the best way.
+given the time allowed to do this test, I might not ba able to handle this problem in the best way, so some of the country that are the less represented may have worse predictions.
 
 The problem I face for this test is a regression problem.
 
@@ -92,7 +95,7 @@ I will try different algorithms in order to solve this and make the best predict
     - Linear Regression
 
 
-In this exercice, i got rid of a lot of code that were unnecessary for the execution but necessary for the training and optimisation of the model,so I putted it in this Readme down bellow.
+In this exercice, i got rid of a lot of code that were unnecessary for the execution but necessary for the training and optimisation of the model,so I putted it in this Readme down below.
 
 from sklearn.linear_model import LinearRegression
 
