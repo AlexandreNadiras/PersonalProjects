@@ -33,9 +33,12 @@ The reason I used Sqlite3 is because I was familiar with it and also because the
 This code only needs to be executed once and should return a visualisation of the curve representing the points given to each wine versus the price.
 
 I chose to aggregate on the price's mean the clean dataset first in order to get a better visualisation than a scatter chart.
-Given this data we can see a clear tendancy: the more expensive a wine is the better score it should get. It also appears that some wines between 200 and 300 are an exception to this. 
 
-I don't think that it is pertinent to consider the wines that have a higher price than 1500. I think they are more likely to be outliers than variance in our data. 
+Given this data we can see a clear tendancy: the more expensive a wine is the better score it should get. 
+It also appears that some wines between 200 and 300 are an exception to this. 
+
+I don't think that it is pertinent to consider the wines that have a higher price than 1500. 
+I think they are more likely to be outliers than variance in our data. 
 What we can say however on those high price wines is that their supposed quality is not worth the price.
 This can be explained but the nature of the score itself, each wines are tested by people that can get upset with a wine they paid a lot to taste and didn't fill their expectations. 
 We also have to say that the dataset only gives us the wines that have a score above 80, and might not represent faithfully all the data.
@@ -43,7 +46,8 @@ We also have to say that the dataset only gives us the wines that have a score a
 
 # BonusMachineLearning.py:
 
-In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() and give 2 arguments, the first one being the id of the country, and the second one being the price. Due to the nature of my algorithm, the answer is an integer. 
+In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() and give 2 arguments, the first one being the id of the country, and the second one being the price. 
+Due to the nature of my algorithm, the answer is an integer. 
 You can find here the corresponding number to each country here:
 
 {'US': 1, 'France': 2, 'Italy': 3, 'Spain': 4, 'Portugal': 5, 'Chile': 6, 'Argentina': 7, 'Austria': 8, 'Australia': 9,
@@ -52,7 +56,11 @@ You can find here the corresponding number to each country here:
          'Ukraine': 31, 'Serbia': 32, 'Macedonia': 33, 'Czech Republic': 34, 'Cyprus': 35, 'India': 36, 'Switzerland':37, 'Luxembourg': 38, 'Bosnia and Herzegovina': 39, 
          'Armenia': 40, 'Egypt': 41, 'Slovakia': 42, 'China': 43}
 
+the methodology is used is the following:
+	- test
+	- rr
 The methodology I used is the following:
+	- 
 	- Reading the original CSV into a pandas Dataframe
 	- Cleaning the dataframe by droping all the NaN values and the features except price, points and country
 	- Replacing each country name by an integer
