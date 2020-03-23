@@ -47,7 +47,9 @@ We also have to say that the dataset only gives us the wines that have a score a
 # BonusMachineLearning.py:
 
 In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() and give 2 arguments, the first one being the id of the country, and the second one being the price. 
+
 Due to the nature of my algorithm, the answer is an integer. 
+
 You can find here the corresponding number to each country here:
 
 {'US': 1, 'France': 2, 'Italy': 3, 'Spain': 4, 'Portugal': 5, 'Chile': 6, 'Argentina': 7, 'Austria': 8, 'Australia': 9,
