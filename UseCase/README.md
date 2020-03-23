@@ -1,4 +1,4 @@
-Requirements:
+# Requirements:
 
 If you are working with a 2.X version of python, you will have to install pysqlite.
 
@@ -7,14 +7,14 @@ pip install pysqlite
 All this codes and the originale CSV Files must be in the same directory.
 
 
-UseCaseObjectives.py:
+# UseCaseObjectives.py:
 
 
 The only requirement for this code to run is that you have the origianl csv file in the same directory.
 The code is very documented and pretty straight forward.
 
 
-BonusSQL.py:
+# BonusSQL.py:
 
 
 This code only needs to be executed one and should return the result of 2 SQl Requests.
@@ -25,7 +25,7 @@ The second output is the result of the question: "What are the top 5 best wines 
 
 The reason I used Sqlite3 is because I was familiar with it and also because the data I used were not that heavy and  resource consuming.
 
-BonusVisualisation.py:
+# BonusVisualisation.py:
 
 
 This code only needs to be executed once and should return a visualisation of the curve representing the points given to each wine versus the price.
@@ -38,7 +38,7 @@ This can be explained but the nature of the score itself, each wines are tested 
 expectations. We also have to say that the dataset only gives us the wines that have a score above 80, and might not represent faithfully all the data.
 
 
-BonusMachineLearning.py:
+# BonusMachineLearning.py:
 
 In order to make a prediction, you need to run this code, it takes approximatively 4 secondes to execute, and then you can call the function make_pred() and give 2 arguments, 
 the first one being the id of the country, and the price. Due to the nature of my algorithm, the answer is an integer.
@@ -71,7 +71,7 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
 
-Training each model and evaluating it on the training set:
+## Training each model and evaluating it on the training set:
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=1)
 
@@ -87,7 +87,7 @@ linear_score = cross_val_score(linear_reg, X_train, y_train, cv=5, verbose=5)
 print('Score on Validation Set : {}'.format(linear_score.mean()))
 
 
-Evaluating the model's performance:
+## Evaluating the model's performance:
 
 rf.fit(X_test, y_test)
 rf = rf.predict(X_test)
@@ -95,7 +95,7 @@ rf_mse = mean_squared_error(y_test, rf)
 rf_rmse = np.sqrt(rf_mse)
 print(rf_rmse)
 
-Parameters optimisation:
+## Parameters optimisation:
 
 param_to_opti = {
     'n_estimators' : [11, 51, 101],
