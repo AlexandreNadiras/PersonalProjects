@@ -163,3 +163,8 @@ rf_opti_model.fit(X_train, y_train)
 
 print('Random Forest best hyperparameters : {}'.format(rf_opti_model.best_params_))
 
+## Possible Improvements
+
+	- train the model on more data
+	- train a polynomial feature model
+	- use a more powerful engine and framework than scikit learn
