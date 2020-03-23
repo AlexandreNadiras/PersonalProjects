@@ -1,7 +1,9 @@
 Requirements:
 
 If you are working with a 2.X version of python, you will have to install pysqlite.
+
 pip install pysqlite
+
 All this codes and the originale CSV Files must be in the same directory.
 
 
@@ -16,8 +18,11 @@ BonusSQL.py:
 
 
 This code only needs to be executed one and should return the result of 2 SQl Requests.
+
 The first output is the result of the question: "What are the top 5 best wines below 10 USD?"
+
 The second output is the result of the question: "What are the top 5 best wines below 30 USD from Chile 🗿"
+
 The reason I used Sqlite3 is because I was familiar with it and also because the data I used were not that heavy and  resource consuming.
 
 BonusVisualisation.py:
