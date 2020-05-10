@@ -4,7 +4,7 @@ Here is the list of file contained in this repo:
 - Classification_Prediction.py: contains the classification problem
 - UseCase_2.ipynb: Jupyter Notebook that I used to plan and train my classification model
 - requirements.txt: contains the requirements to run all files properly
-- REARME.md: contains all the extra informations, code and commentary about the python codes and the questions.
+- README.md: contains all the extra informations, code and commentary about the python codes and the questions.
 
 # Requirements:
 
