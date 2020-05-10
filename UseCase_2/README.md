@@ -15,7 +15,7 @@ All this python files and the original CSV Files must be in the same directory o
 
 # Most_Common_Words.py:
 
-This file has no requirements as it only needs the correct libraries to run
+This file has no requirement as it only needs the correct libraries to run
 
 # Classification_Prediction.py:
 
