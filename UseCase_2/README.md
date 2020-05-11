@@ -12,8 +12,6 @@ pip install -r requirements.txt
 
 You need to download the CSV file.
 
-All this python files and the original CSV Files must be in the same directory on your computer.
-
 # Most_Common_Words.py:
 
 This file has no requirement as it only needs the correct libraries to run
